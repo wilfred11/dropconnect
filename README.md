@@ -1,1 +1,1 @@
-# dropconnect
+In this project the performance of two digit recognition models are compared statistically. The first model is contains 2 linear layers, the second model contains 2 linear layers of which one is a DropConnectLayer. The results of the performances for the two models should be somewhat similar (around 97.23 and 97.91), but the statistical test shows the results should be considered different with a confidence interval of 95%/. The normal distribution approximations for both performance results are also plotted in two histograms. 
