@@ -1,10 +1,6 @@
 import torch
 import torch.nn.functional as F
-import torchvision.datasets as datasets
-import torchvision.transforms as transforms
-from torch import optim
 from torch import nn
-from torch.utils.data import DataLoader
 
 
 from dropconnect import WeightDropLinear
@@ -54,8 +50,6 @@ class NN(nn.Module):
         super(NN, self).__init__()
 
         self.fc1 = nn.Linear(input_size, 50)
-        print(type(self.fc1))
-        print(type(self.fc1.weight))
         self.fc2 = nn.Linear(50, num_classes)
 
     def forward(self, x):

@@ -1,5 +1,4 @@
 import math
-
 from matplotlib import pyplot as plt
 from scipy.stats import norm
 

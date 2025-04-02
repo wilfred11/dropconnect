@@ -1,6 +1,4 @@
 import math
-
-import scipy.stats
 import torch
 from matplotlib import pyplot as plt
 from torch import nn, optim
@@ -8,15 +6,9 @@ from torch.utils.data import DataLoader, SubsetRandomSampler
 from torchvision import datasets
 from tqdm import tqdm
 import torchvision.transforms as transforms
-
 import stat_test
 from model import check_accuracy, NN, NN_dropconnect
-import numpy as np
-from statsmodels.stats.weightstats import ztest
-from statsmodels.stats.weightstats import ttest_ind
-from scipy.stats import norm
-import seaborn as sns
-from statistics import NormalDist
+
 import pickle
 
 do = 11
