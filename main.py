@@ -72,7 +72,8 @@ if do == 11:
         drop = pickle.load(f)
     print(no_drop)
     print(drop)
-    stat_test.test(no_drop[1][0], drop[1][0], no_drop[1][1], drop[1][1])
+    stat_test.test(no_drop[1][0], drop[1][0], no_drop[1][1], drop[1][1], 0.05)
+    stat_test.test(no_drop[1][0], drop[1][0], no_drop[1][1], drop[1][1], 0.01)
     stat_test.show_binoms_as_normal_approx(no_drop[1][0], drop[1][0], no_drop[1][1], drop[1][1])
 
 

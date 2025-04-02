@@ -7,19 +7,21 @@ def p_hat(n1,n2,p1,p2):
     p_hat = ((n1 * p1) + (p2 * n1)) / (n1 + n1)
     return p_hat
 
-def test(n1,n2,p1,p2):
+def test(n1,n2,p1,p2, err):
     p_h= p_hat(n1,n2,p1,p2)
     z = (p1 - p2) / math.sqrt(p_h * (1 - p_h) * ((1 / n1) + (1 / n2)))
     D = norm()
-    z_975 = D.ppf(0.975)
-    print("z_975: " + str(z_975))
+    crit_p = 1 - (err/2)
+    print("crit_p: "+ str(crit_p))
+    crit_value = D.ppf(crit_p)
+    print("critical value: " + str(crit_value))
 
-    if abs(z)>z_975:
-        print("z>z_975: "+ "Z="+ str(z) +"> z_975="+str(z_975))
-        print("reject the null hypothesis, p1 differs from p2" )
+    if abs(z)>crit_value:
+        print("z>critical value: "+ "z="+ str(abs(z)) +"> critical value="+str(crit_value))
+        print("reject the null hypothesis, p1 differs from p2 with a confidence level of "+ str(1- err) )
     else:
-        print("z<=z_975: " + "Z=" + str(z) + "<= z_975=" + str(z_975))
-        print("don't reject the null hypothesis, p1 equals p2")
+        print("z<=critical value: " + "z=" + str(abs(z)) + "<= critical value=" + str(crit_value))
+        print("don't reject the null hypothesis, p1 equals p2 with a confidence level of "+ str(1- err) )
 
 def show_binoms_as_normal_approx(n1,n2,p1,p2):
     print(
