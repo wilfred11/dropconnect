@@ -1,7 +1,7 @@
 import math
 from matplotlib import pyplot as plt
 from scipy.stats import norm
-
+from statistics import  NormalDist
 
 def p_hat(n1,n2,p1,p2):
     p_hat = ((n1 * p1) + (p2 * n1)) / (n1 + n1)
@@ -15,6 +15,8 @@ def test(n1,n2,p1,p2, err):
     print("crit_p: "+ str(crit_p))
     crit_value = D.ppf(crit_p)
     print("critical value: " + str(crit_value))
+    p_value = 1-2*(D.cdf(abs(z))-.5)
+    print("p_value: "+str(p_value))
 
     if abs(z)>crit_value:
         print("z>critical value: "+ "z="+ str(abs(z)) +"> critical value="+str(crit_value))
@@ -48,5 +50,7 @@ def show_binoms_as_normal_approx(n1,n2,p1,p2):
     x2_virtual = D.rvs(size=10000)
     plt.hist(x2_virtual, bins=25, color='green', alpha=0.5, label='Virtual classification performance sample 2')
     plt.show()
+
+    print(NormalDist(mu=mu1, sigma=sd1).overlap(NormalDist(mu=mu2, sigma=sd2)))
 
 
