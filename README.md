@@ -22,7 +22,7 @@ There is a statistical difference between the two binomial success values (97.23
 
 #### Calculating z-score
 
-Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
+Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000 and the formula for the zscore.
 
 abs(zscore) = 3.12
 
