@@ -51,7 +51,7 @@ The formula for the p-value is :
 $p-value = 1-2*(D.cdf(abs(z))-.5)$
 
 where 
-z=3.12
+z-score=3.12
 
 
 
