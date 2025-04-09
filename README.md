@@ -45,15 +45,19 @@ When using 0.975 in the ppf function of the norm, it returns the critical value 
 As the absolute value of the zscore (3.12) is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
 ### Get the p-value for a zscore
+The p-value expresses the chance to get a value that is higher or equal to the zscore (3.12) or lower or equal to the -zscore (-3.12). To get this value I can use the cdf function for the norm. D.cdf(3.12) returns a percental amount of data that is present between - $\infty$ and 3.12, when substracting 0.5 from this value I get the amount of data that is present between the mean and 3.12, doubling that value will return the percental amount of data present between -3.12 and +3.12. 
 
 The formula for the p-value is :
+`from scipy.stats import norm`
+
+`D=norm()`
 
 `pvalue = 1-2X(D.cdf(abs(zscore))-.5)`
 
 where 
 zscore=3.12
 
-The cummulative distribution function (cdf) for the z-score (3.12) will return the percental amount of data that is present between - $\infty$ and 3.12. This value is 99.9%.
+The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 
 
 
 
