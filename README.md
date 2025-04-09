@@ -42,7 +42,7 @@ D=norm() will create a standardized normal distribution (with mean =0, and sd=1)
 
 When using 0.975 in the ppf function of the norm, it returns the critical value of 1.96.
 
-As the absolute value of the z_score is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
+As the absolute value of the zscore (3.12) is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
 #### P-value
 
@@ -53,7 +53,7 @@ $pvalue = 1-2\times(D.cdf(abs(zscore))-.5)$
 where 
 zscore=3.12
 D.cdf(3.12)-.5 
-The cummulative distribution function for the z-score (3.12) will return the amount of data that is from $-\infinity$ up to 3.12 in a percentage. 
+The cummulative distribution function for the z-score (3.12) will return the amount of data that is from -$\infty$ up to 3.12 in a percentage. 
 
 
 
