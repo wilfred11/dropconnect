@@ -48,6 +48,7 @@ As the absolute value of the zscore (3.12) is above the critical value of 1.96, 
 The p-value expresses the chance to get a value that is higher or equal to the zscore (3.12) or lower or equal to the -zscore (-3.12). To get this value I can use the cdf function for the norm. D.cdf(3.12) returns a percental amount of data that is present between - $\infty$ and 3.12, when substracting 0.5 from this value I get the amount of data that is present between the mean and 3.12, doubling that value will return the percental amount of data present between -3.12 and +3.12. 
 
 The formula for the p-value is :
+
 `from scipy.stats import norm`
 
 `D=norm()`
@@ -57,7 +58,7 @@ The formula for the p-value is :
 where 
 zscore=3.12
 
-The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 
+The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 1 minus 99.82% is 0.18%. So only 0.18% of the data is further away from the mean than our zscore, this zscore represents the difference between our two sample performance rates expressed in a standardized error, only 0.18% of the data is outside our boundary of -3.12 and +3.12. The p-value is 0.0018, so it is almost impossible to generate a sample of 10000 individual tests that have a zscore of 3.12 without using another distribution with a different mean and sd.
 
 
 
