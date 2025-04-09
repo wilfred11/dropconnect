@@ -23,17 +23,15 @@ Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 
 abs(z-score) = 3.12
 
-Using the following code snippet one can generate a standard normal distribution.
-To get the critical value, the value above which the z-score should be considered different, use the allowed error and the ppf function.
-The ppf function the percent point function returns the z-value at which some arbitrary part of the data is included in the normal curve.
+#### Get the critical value for an allowed error
 As I want to assert whether the success values for the samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other I need to halve the allowed error to get a critical value at one side. 
 
 This critical value is 1.96 when using an allowed error of 0.05. 
 
-#### Get the critical value for an allowed error
+
 Half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. When using 0.975 in the ppf function it returns the critical value of 1.96. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (one tail). The other 2.5% of the data will be in the other tail, beyond the critical value of -1.96. 
 
-The code to get the critical value. D=norm() will create a standardized normal distribution (with mean =0, and sd=1)
+The code to get the critical value. D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while ppf (percent point function) returns the critical value that includes 97.5% of the data.
 
 `from scipy.stats import norm`
 
