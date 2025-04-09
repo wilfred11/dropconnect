@@ -5,7 +5,7 @@ The results of the performances for the two models are somewhat similar (97.23% 
 ### Testing whether two models differ in terms of performance
 The test statistic is calculated using the following formula. It uses a $\hat{p}$ that is a weighted mean p for both of the distributions.
 
-$z\_score = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
+$zscore = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
 
 where 
 
