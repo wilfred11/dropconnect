@@ -41,7 +41,7 @@ D=norm() will create a standardized normal distribution (with mean =0, and sd=1)
 
 `crit_value = D.ppf(.975)`
 
-As the absolute value of the z_score is above the critical value of 1.96 the p1 and p2 are considered statistically different with a confidence level of 95%.
+As the absolute value of the z_score is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
 ### Normal distribution to approximate a binomial distribution
 
