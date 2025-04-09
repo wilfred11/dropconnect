@@ -9,7 +9,7 @@ $zscore = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
 
 where 
 
-$\hat{p} = \frac{p1n1+p2n2}{n1+n2}$
+$\hat{p} = \frac{p1\timesn1+p2\timesn2}{n1+n2}$
 
 #### Hypotheses
 The hypotheses are:
