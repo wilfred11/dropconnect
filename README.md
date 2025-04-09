@@ -24,11 +24,11 @@ The ppf function the percent point function returns the z-value at which some ar
 As I want to assert whether the success values for the samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other I need to halve the allowed error to get a critical value at one side. This critical value is 
 
 
-`from scipy.stats import norm
+`from scipy.stats import norm`
 
-D=norm()
+`D=norm()`
 
-D.ppf(.975)`
+`D.ppf(.975)`
 
 
 calculate the corresponding critical region value to compare your test statistic too. For example, if you are testing this hypothesis at the 95% confidence level then you need to compare the absolute value of your test statistic against the critical region value 
