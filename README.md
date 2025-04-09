@@ -50,6 +50,9 @@ The formula for the p-value is :
 
 $p-value = 1-2*(D.cdf(abs(z))-.5)$
 
+where 
+z=3.12
+
 
 
 ### Normal distribution to approximate a binomial distribution
