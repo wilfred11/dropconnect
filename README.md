@@ -26,12 +26,12 @@ Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 abs(z-score) = 3.12
 
 #### Get the critical value for an allowed error
-As I want to assert whether the success values for the samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other I need to halve the allowed error to get a critical value at one side. 
+As I want to assert whether the success values for the two samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other, I need to halve the allowed error to get a critical value at one side. 
 
 This critical value is 1.96 when using an allowed error of 0.05. 
 
 
-Half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. When using 0.975 in the ppf function it returns the critical value of 1.96. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (one tail). The other 2.5% of the data will be in the other tail, beyond the critical value of -1.96. 
+Half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. When using 0.975 in the ppf function of the norm, it returns the critical value of 1.96. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (one tail). The other 2.5% of the data will be in the other tail, beyond the critical value of -1.96. 
 
 D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while ppf(0.975) (percent point function) returns the critical value that includes 97.5% of the data.
 
