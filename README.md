@@ -53,7 +53,7 @@ $pvalue = 1-2*(D.cdf(abs(zscore))-.5)$
 where 
 zscore=3.12
 D.cdf(3.12)-.5 
-The cummulative distribution function for the z-score (3.12) will return the amount of data that is from $-\infinity up to 3.12 in a percentage. 
+The cummulative distribution function for the z-score (3.12) will return the amount of data that is from $-\infinity$ up to 3.12 in a percentage. 
 
 
 
