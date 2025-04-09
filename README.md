@@ -1,11 +1,12 @@
 In this project the performance of two digit recognition models are compared statistically. The first model contains 2 linear layers, the second model contains 2 linear layers of which one is a DropConnectLayer (I am a bit doubtful with respect to this layer, but I was mainly trying to do some statistical testing.). A DropConnection layer is a layer that promotes generalization by randomly setting weights to zero when backpropagating. The results of the performances for the two models are somewhat similar (97.23% and 97.91% for 10000 individual tests), but the statistical test shows the results should be considered different with a confidence interval of 95% and 99%. The test statistic is calculated using the following formula. It uses a $\hat{p}$ that is a weighted mean p for both of the distributions.
 
+The hypothesis are:
 $H_0: p1 = p2 $
 
 $H_a: p1 \not= p2 $
 
 $z = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
-
+where 
 $\hat{p}$ = $\frac{(p1*n1)+(p2*n2)}{n1+n2}$
 
 ![test_b](https://github.com/user-attachments/assets/a8b08f74-05e6-4e50-8a7b-b93e6ade6873)
