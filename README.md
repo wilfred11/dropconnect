@@ -48,11 +48,11 @@ As the absolute value of the zscore (3.12) is above the critical value of 1.96, 
 
 The formula for the p-value is :
 
-$pvalue = 1-2\times(D.cdf(abs(zscore))-.5)$
+`$pvalue = 1-2\times(D.cdf(abs(zscore))-.5)$`
 
 where 
 zscore=3.12
-D.cdf(3.12)-.5 
+
 The cummulative distribution function (cdf) for the z-score (3.12) will return the percental amount of data that is present between - $\infty$ and 3.12. This value is 99.9%.
 
 
