@@ -44,11 +44,11 @@ When using 0.975 in the ppf function of the norm, it returns the critical value 
 
 As the absolute value of the zscore (3.12) is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
-#### P-value
+### Get the p-value for a zscore
 
 The formula for the p-value is :
 
-`$pvalue = 1-2\times(D.cdf(abs(zscore))-.5)$`
+`pvalue = 1-2\times(D.cdf(abs(zscore))-.5)`
 
 where 
 zscore=3.12
