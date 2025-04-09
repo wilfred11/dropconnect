@@ -16,9 +16,17 @@ $\hat{p} = \frac{p1n1+p2n2}{n1+n2}$
 
 Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 
-z = 3.12
+abs(z) = 3.12
 
-`est`
+Using the following code snippet one can generate a standard normal distribution.
+To get the critical value, the value above which the z-score should be considered different, use the allowed error (.5) and the ppf function.
+The ppf function the percent point function returns the z-value at which some arbitrary part of the data is included in the normal curve.
+As I want to assert whether the success values for the samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other I need to halve the allowed error to get a critical value at one side. This critical value is 
+
+
+`from scipy.stats import norm`
+`D=norm()`
+`D.ppf(.975)`
 
 
 calculate the corresponding critical region value to compare your test statistic too. For example, if you are testing this hypothesis at the 95% confidence level then you need to compare the absolute value of your test statistic against the critical region value 
