@@ -14,8 +14,7 @@ where
 
 $\hat{p} = \frac{p1n1+p2n2}{n1+n2}$
 
-Once you have calculated the test statistic (z), 
-using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
+Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 
 z = 3.12
 
