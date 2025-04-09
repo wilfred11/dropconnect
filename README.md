@@ -3,7 +3,9 @@ In this project the performance of two digit recognition models are compared sta
 $H_0: p1 = p2 $
 
 $H_a: p1 \not= p2 $
-$z = \frac{p1-p2}{\sqrt(5)}$
+
+$z = \frac{p1-p2}{\sqrt(\hat{p}(1-\hat{p})*(1/n1+1/n2}$
+
 z = p1 - p2 
 ![test_b](https://github.com/user-attachments/assets/a8b08f74-05e6-4e50-8a7b-b93e6ade6873)
 
