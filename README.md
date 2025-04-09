@@ -29,10 +29,7 @@ abs(z-score) = 3.12
 #### Get the critical value for an allowed error
 As I want to assert whether the success values for the two samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other, I need to halve the allowed error to get a critical value at one side. 
 
-This critical value is 1.96 when using an allowed error of 0.05. 
-
-
-Half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. When using 0.975 in the ppf function of the norm, it returns the critical value of 1.96. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (one tail). The other 2.5% of the data will be in the other tail, beyond the critical value of -1.96. 
+If the allowed error is 0.5. Than half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. So I need to find the positive z-value that contains 97.5% of the data, the so-called critical value when allowing an error of 0.05. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (the right tail). The other 2.5% of the data will be in the other tail (the left tail), beyond the critical value of -1.96. 
 
 D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while ppf(0.975) (percent point function) returns the critical value that includes 97.5% of the data.
 
@@ -41,6 +38,11 @@ D=norm() will create a standardized normal distribution (with mean =0, and sd=1)
 `D=norm()`
 
 `crit_value = D.ppf(.975)`
+#### Critical value
+
+When using 0.975 in the ppf function of the norm, it returns the critical value of 1.96.
+
+
 
 As the absolute value of the z_score is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
