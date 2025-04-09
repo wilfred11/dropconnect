@@ -18,6 +18,7 @@ Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 
 z = 3.12
 
+'test'
 
 
 calculate the corresponding critical region value to compare your test statistic too. For example, if you are testing this hypothesis at the 95% confidence level then you need to compare the absolute value of your test statistic against the critical region value 
