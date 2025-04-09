@@ -14,6 +14,14 @@ where
 
 $\hat{p} = \frac{p1n1+p2n2}{n1+n2}$
 
+Once you have calculated the test statistic (z), 
+using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
+z = 3.12
+
+
+calculate the corresponding critical region value to compare your test statistic too. For example, if you are testing this hypothesis at the 95% confidence level then you need to compare the absolute value of your test statistic against the critical region value 
+
+
 
 Provided there are enough tests in the sample a binomial distribution can be approximated by a normal distribution. The mean for this normal distribution is n*p (number of tests times success rate) and its standard deviation is the square root of (n * p *(1-p)). These normal distribution approximations for both performance results are plotted in two histograms using 10000 randomly generated observations (every observation will contain the result for 10000 individual tests).
 
