@@ -6,7 +6,8 @@ $H_a: p1 \not= p2 $
 
 $z = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
 
-z = p1 - p2 
+$\hat{p} = \frac{(p1*n1) + (p2*n2)}{n1+n2}
+
 ![test_b](https://github.com/user-attachments/assets/a8b08f74-05e6-4e50-8a7b-b93e6ade6873)
 
 Provided there are enough tests in the sample a binomial distribution can be approximated by a normal distribution. The mean for this normal distribution is n*p (number of tests times success rate) and its standard deviation is the square root of (n * p *(1-p)). These normal distribution approximations for both performance results are plotted in two histograms using 10000 randomly generated observations (every observation will contain the result for 10000 individual tests).
