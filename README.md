@@ -5,9 +5,11 @@ The hypotheses are:
 $H_0: p1 = p2 $ 
 There is no statistical difference between the two binomial success values (97.23% and 97.91%).
 
-$H_a: p1 \not= p2 $ There is a statistical difference between the two binomial success values (97.23% and 97.91%).
+$H_a: p1 \not= p2 $ 
+There is a statistical difference between the two binomial success values (97.23% and 97.91%).
 
 $z = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
+
 where 
 $\hat{p}$ = $\frac{(p1*n1)+(p2*n2)}{n1+n2}$
 
