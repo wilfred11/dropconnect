@@ -24,7 +24,7 @@ There is a statistical difference between the two binomial success values (97.23
 
 Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 
-abs(z-score) = 3.12
+abs(zscore) = 3.12
 
 #### Get the critical value for an allowed error
 As I want to assert whether the success values for the two samples are different, and I have no expectancy whether one sample p will be bigger or smaller than the other, I need to halve the allowed error to get a critical value at one side. 
@@ -48,7 +48,7 @@ As the absolute value of the z_score is above the critical value of 1.96, p1 and
 
 The formula for the p-value is :
 
-$p-value = 1-2*(D.cdf(abs(z))-.5)$
+$p-value = 1-2*(D.cdf(abs(zscore))-.5)$
 
 where 
 z-score=3.12
