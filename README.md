@@ -36,7 +36,7 @@ The code to get the critical value. D=norm() will create a standardized normal d
 
 As the absolute value of the z_score is above the critical value of 1.96 the p1 and p2 are considered statistically different with a confidence level of 95%.
 
-### Normal distribution to approximate 
+### Normal distribution to approximate a binomial distribution
 
 Provided there are enough tests in the sample a binomial distribution can be approximated by a normal distribution. The mean for this normal distribution is n*p (number of tests times success rate) and its standard deviation is the square root of (n * p *(1-p)). These normal distribution approximations for both performance results are plotted in two histograms using 10000 randomly generated observations (every observation will contain the result for 10000 individual tests).
 
