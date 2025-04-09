@@ -2,8 +2,15 @@ In this project the performance of two digit recognition models are compared sta
 
 The results of the performances for the two models are somewhat similar (97.23% and 97.91% for 10000 individual tests), but the statistical test shows the results should be considered different with a confidence interval of 95% and even 99%. 
 
-### Testing whether two models differ considering performances
+### Testing whether two models differ in terms of performance
 The test statistic is calculated using the following formula. It uses a $\hat{p}$ that is a weighted mean p for both of the distributions.
+
+$z-score = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
+
+where 
+
+$\hat{p} = \frac{p1n1+p2n2}{n1+n2}$
+
 #### Hypotheses
 The hypotheses are:
 
@@ -14,12 +21,6 @@ $H_a: p1 \not= p2 $
 There is a statistical difference between the two binomial success values (97.23% and 97.91%).
 
 #### Calculating z-score
-
-$z-score = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})*(\frac{1}{n1}+\frac{1}{n2})}}$
-
-where 
-
-$\hat{p} = \frac{p1n1+p2n2}{n1+n2}$
 
 Using values p1=0.9723, p2=0.9791, n1=10000, n2=10000
 
