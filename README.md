@@ -31,7 +31,7 @@ As I want to assert whether the success values for the two samples are different
 
 If the allowed error is 0.5. Than half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. So I need to find the positive z-value that contains 97.5% of the data, the so-called critical value when allowing an error of 0.05. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (the right tail). The other 2.5% of the data will be in the other tail (the left tail), beyond the negative critical value. 
 
-D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while ppf(0.975) (percent point function) returns the critical value that includes 97.5% of the data.
+D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while D.ppf(0.975) (percent point function) returns the critical value that includes 97.5% of the data.
 
 `from scipy.stats import norm`
 
@@ -41,8 +41,6 @@ D=norm() will create a standardized normal distribution (with mean =0, and sd=1)
 #### Critical value
 
 When using 0.975 in the ppf function of the norm, it returns the critical value of 1.96.
-
-
 
 As the absolute value of the z_score is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
