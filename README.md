@@ -48,7 +48,7 @@ As the absolute value of the z_score is above the critical value of 1.96, p1 and
 
 The formula for the p-value is :
 
-$p-value = 1-2*(D.cdf(abs(zscore))-.5)$
+$pvalue = 1-2*(D.cdf(abs(zscore))-.5)$
 
 where 
 zscore=3.12
