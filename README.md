@@ -25,7 +25,9 @@ As I want to assert whether the success values for the samples are different, an
 
 
 `from scipy.stats import norm`
+
 `D=norm()`
+
 `D.ppf(.975)`
 
 
