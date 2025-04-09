@@ -31,6 +31,7 @@ This critical value is 1.96 when using an allowed error of 0.05.
 Half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. When using 0.975 in the ppf function it returns the critical value of 1.96. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (one tail). The other 2.5% of the data will be in the other tail, beyond the critical value of -1.96. 
 
 The code to get the critical value. D=norm() will create a standardized normal distribution (with mean =0, and sd=1)
+
 `from scipy.stats import norm`
 
 `D=norm()`
