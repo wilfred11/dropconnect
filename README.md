@@ -66,9 +66,28 @@ The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% 
 
 Provided there are enough tests in the sample a binomial distribution can be approximated by a normal distribution. The mean for this normal distribution is n*p (number of tests times success rate) and its standard deviation is the square root of (n * p *(1-p)). These normal distribution approximations for both performance results are plotted in two histograms using 10000 randomly generated observations (every observation will contain the result for 10000 individual tests).
 
-As can be seen, the randomly generated histograms have a very small overlap in their extreme tails, so when assuming the respective mean and standard deviation used to generate the samples are representative for all respective samples, be it of linear or DropConnect linear origin, than it is next to impossible to produce two samples (containing results for 10000 individual tests) closer to the overlapping tails so that 5% or 1%  of the samples could belong to the other sample. 
+### Generate 10000 samples
 
-In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
+To create a distribution with some mean and standard deviation use the following code.
+
+`from scipy.stats import norm`
+
+`D = norm(mean, sd)`
+
+To generate 10000 sample results, this is 10000 samples of 10000 individual tests, the following code is used.
+The distribution created before is used to create 10000 random variates (D.rvs(size=10000).
+
+`x_virtual = D.rvs(size=10000)`
+
+`x_min = min(x)`
+ 
+ `x_max = max(x)`
+ 
+ `plt.hist(x, bins=int(x_max)- int(x_min), color='red', alpha=0.5, label='virtual histogram 1')`
+
+As can be seen, the randomly generated histograms for both models have a very small overlap in their extreme tails, so when assuming the respective mean and standard deviation used to generate the samples are representative for all respective samples, be it of linear or DropConnect linear origin, than it is next to impossible to produce two samples (containing results for 10000 individual tests) from the two distributions closer to  each other so that at least 5% or 1%  of the samples could belong to the other sample. 
+
+In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other, real samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
 
 ![bin_test](https://github.com/user-attachments/assets/448c57c5-6de1-4a53-a6db-0b05f98ef134)
 
