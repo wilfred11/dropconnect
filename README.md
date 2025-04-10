@@ -31,7 +31,7 @@ As I want to assert whether the success values for the two samples are different
 
 If the allowed error is 0.5. Than half of 0.05 (allowed error) is 0.025, and 1-0.025 is 0.975. So I need to find the positive z-value that contains 97.5% of the data, the so-called critical value when allowing an error of 0.05. The idea behind this critical value is that 2.5% of the data will be in the region beyond the critical value (the right tail). The other 2.5% of the data will be in the other tail (the left tail), beyond the negative critical value. 
 
-D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while D.ppf(0.975) (percent point function) returns the critical value that includes 97.5% of the data.
+D=norm() will create a standardized normal distribution (with mean =0, and sd=1), while D.ppf(0.975) (ppf=percent point function) returns the critical value that includes 97.5% of the data.
 
 `from scipy.stats import norm`
 
@@ -58,7 +58,7 @@ The formula for the p-value is :
 where 
 zscore=3.12
 
-The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 1 minus 99.82% is 0.18%. So only 0.18% of the data is further away from the mean than our zscore, this zscore represents the difference between our two sample performance rates expressed in a standardized error, only 0.18% of the data is outside our boundary of -3.12 and +3.12. The p-value is 0.0018, so it is almost impossible to generate a sample of 10000 individual tests that have a zscore of 3.12 without using another distribution with a different mean and sd.
+The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 1 minus 99.82% is 0.18%. So only 0.18% of the data is further away from the mean than our zscore, this zscore represents the difference between our two sample performance rates expressed in a standardized error, only 0.18% of the data is outside our boundary of -3.12 and +3.12. The pvalue is 0.0018, this very small value expresses the impossiblity to produce this zscore of 3.12 without using another distribution with a different mean and sd.
 
 
 
@@ -70,4 +70,5 @@ As can be seen, the randomly generated histograms have a very small overlap in t
 
 In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
 
-![norm_binom](https://github.com/user-attachments/assets/e48d5919-5723-4156-acf9-4aa155b9ebdc)
+![bin_test](https://github.com/user-attachments/assets/448c57c5-6de1-4a53-a6db-0b05f98ef134)
+
