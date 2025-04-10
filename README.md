@@ -60,13 +60,13 @@ zscore=3.12
 
 The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 1 minus 99.82% is 0.18%. So only 0.18% of the data is further away from the mean than our zscore, this zscore represents the difference between our two sample performance rates expressed in a standardized error, only 0.18% of the data is outside our boundary of -3.12 and +3.12. The pvalue is 0.0018, this very small value expresses the impossiblity to produce this zscore of 3.12 without using another distribution with a different mean and sd.
 
-
+In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other, real samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
 
 ### Normal distribution to approximate a binomial distribution
 
 Provided there are enough tests in the sample a binomial distribution can be approximated by a normal distribution. The mean for this normal distribution is n*p (number of tests times success rate) and its standard deviation is the square root of (n * p *(1-p)). These normal distribution approximations for both performance results are plotted in two histograms using 10000 randomly generated observations (every observation will contain the result for 10000 individual tests).
 
-### Generate 10000 samples
+#### Generate 10000 samples
 
 To create a distribution with some mean and standard deviation use the following code.
 
@@ -83,11 +83,20 @@ The distribution created before is used to create 10000 random variates (D.rvs(s
  
  `x_max = max(x)`
  
- `plt.hist(x, bins=int(x_max)- int(x_min), color='red', alpha=0.5, label='virtual histogram 1')`
+ `plt.hist(x, bins=int(x_max)- int(x_min), color='red', alpha=0.5, label='virtual histogram')`
 
-As can be seen, the randomly generated histograms for both models have a very small overlap in their extreme tails, so when assuming the respective mean and standard deviation used to generate the samples are representative for all respective samples, be it of linear or DropConnect linear origin, than it is next to impossible to produce two samples (containing results for 10000 individual tests) from the two distributions closer to  each other so that at least 5% or 1%  of the samples could belong to the other sample. 
+#### Small overlap
 
-In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other, real samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
+As can be seen, the randomly generated histograms for both models have a very small overlap in their extreme tails. So when assuming the respective mean and standard deviation used to generate the samples are representative for all respective samples, be it of linear or DropConnect linear origin, than it is next to impossible to produce two samples (containing results for 10000 individual tests) from the two distributions that lie closer to  each other so that at least 5% or 1%  of the samples could belong to the other sample. 
+
+#### Generate normal curve
+
+To create the normal curve from a distribution D, I need to generate some inputs using np.linspace. This function returns a evenly spaced numbers over an interval. The function will create numbers between the minimum number of successful tests and the maximum number of successful tests for all samples.
+
+`x_successful_tests = np.linspace(start=x_min, stop=x_max, num=int(x_max)- int(x_min))`
+
+`plt.plot(x_successful_tests, D1.pdf(x_successful_tests)*10000, color="darkgreen", label="normal curve")`
+
 
 ![bin_test](https://github.com/user-attachments/assets/448c57c5-6de1-4a53-a6db-0b05f98ef134)
 
