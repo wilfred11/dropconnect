@@ -1,6 +1,7 @@
 import math
 import torch
 from matplotlib import pyplot as plt
+from scipy.stats import norm
 from torch import nn, optim
 from torch.utils.data import DataLoader, SubsetRandomSampler
 from torchvision import datasets
@@ -76,6 +77,20 @@ if do == 11:
     stat_test.test(no_drop[1][0], drop[1][0], no_drop[1][1], drop[1][1], 0.01)
     stat_test.show_binoms_as_normal_approx(no_drop[1][0], drop[1][0], no_drop[1][1], drop[1][1])
 
+if do == 12:
+    D = norm()
+    crit_p = 1 - (.05 / 2)
+    print("crit_p: " + str(crit_p))
+    crit_value = D.ppf(crit_p)
+    print("critical value: " + str(crit_value))
+    D1= norm(3,34)
+    crit_value1 = D1.ppf(crit_p)
+    print("critical value1: " + str(crit_value1))
+
+    cv = 1- 2*(D.cdf(3.12)-.5)
+    print("cv: "+str(cv))
+    print(D.cdf(3.12)-0.5)
+    print(1-(2*(D.cdf(3.12)-0.5)))
 
 
 

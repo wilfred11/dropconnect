@@ -1,4 +1,6 @@
 import math
+
+import numpy as np
 from matplotlib import pyplot as plt
 from scipy.stats import norm
 from statistics import  NormalDist
@@ -37,7 +39,9 @@ def show_binoms_as_normal_approx(n1,n2,p1,p2):
     print("sd1: " + str(sd1))
     D = norm(mu1, sd1)
     x1_virtual = D.rvs(size=10000)
-    plt.hist(x1_virtual, bins=25, color='red', alpha=0.5, label='Virtual classification performance sample 1')
+    x1_virtual_min = min(x1_virtual)
+    x1_virtual_max = max(x1_virtual)
+    plt.hist(x1_virtual, bins=int(x1_virtual_max)- int(x1_virtual_min), color='red', alpha=0.5, label='Virtual histogram performance sample 1')
     print("n2: " + str(n2))
     print("p2: " + str(p2))
     mu2 = n2 * p2
@@ -46,9 +50,26 @@ def show_binoms_as_normal_approx(n1,n2,p1,p2):
     sd2 = math.sqrt(var2)
 
     print("sd2: " + str(sd2))
-    D = norm(mu2, sd2)
-    x2_virtual = D.rvs(size=10000)
-    plt.hist(x2_virtual, bins=25, color='green', alpha=0.5, label='Virtual classification performance sample 2')
+    D1 = norm(mu2, sd2)
+    x2_virtual = D1.rvs(size=10000)
+    x2_virtual_min = min(x2_virtual)
+    x2_virtual_max = max(x2_virtual)
+    axes = plt.gca()
+
+    axes.set_xlim([int(min(x2_virtual_min, x1_virtual_min)), int(max(x2_virtual_max,x1_virtual_max))])
+    axes.set_ylim([0, 450])
+    plt.hist(x2_virtual, bins=int(x2_virtual_max)- int(x2_virtual_min), color='green', alpha=0.5, label='Virtual histogram performance sample 2')
+    x2 = np.linspace(start=x2_virtual_min, stop=x2_virtual_max, num=int(x2_virtual_max)- int(x2_virtual_min))
+    #print("x2")
+    #print(x2)
+    x1 = np.linspace(start=x1_virtual_min, stop=x1_virtual_max, num=int(x1_virtual_max) - int(x1_virtual_min))
+    plt.xlabel("number of succesful tests per sample")
+    plt.ylabel("number of samples")
+    plt.plot(x1, D.pdf(x1) * 10000, color="darkred", label="sample 1, mean=" + str(mu1) + ", sd=" + str(math.sqrt(var1)))
+    plt.plot(x2, D1.pdf(x2)*10000, color="darkgreen", label="sample 2, mean="+str(mu2)+", sd="+str(math.sqrt(var2)))
+    plt.rcParams["figure.figsize"] = (20, 45)
+    plt.legend()
+    #plt.fill_between(x, D1.pdf(x), color="r")
     plt.show()
 
     print(NormalDist(mu=mu1, sigma=sd1).overlap(NormalDist(mu=mu2, sigma=sd2)))
