@@ -97,7 +97,9 @@ To create the normal curve from a distribution D, I need to generate some inputs
 
 `x_successful_tests = np.linspace(start=x_min, stop=x_max, num=int(x_max)- int(x_min))`
 
-`plt.plot(x_successful_tests, D1.pdf(x_successful_tests)*10000, color="darkgreen", label="normal curve")`
+To generate the number of samples that contains a specific number of successful individual tests use the pdf function (probability distribution function), it will return a probability for every number of successes. The probability times 10000 the number of samples will result in a number that lies on the normal curve for this distribution. 
+
+`plt.plot(x_successful_tests, D.pdf(x_successful_tests)*10000, color="darkgreen", label="normal curve")`
 
 
 ![bin_test](https://github.com/user-attachments/assets/448c57c5-6de1-4a53-a6db-0b05f98ef134)
