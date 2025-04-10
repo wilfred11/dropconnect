@@ -44,7 +44,7 @@ When using 0.975 in the ppf function of the norm, it returns the critical value 
 
 As the absolute value of the zscore (3.12) is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
-### Get the p-value for a zscore
+#### Get the p-value for a zscore
 The p-value expresses the chance to get a value that is higher or equal to the zscore (3.12) or lower or equal to the -zscore (-3.12). To get this value I can use the cdf function for the norm. D.cdf(3.12) returns a percental amount of data that is present between - $\infty$ and 3.12, when substracting 0.5 from this value I get the amount of data that is present between the mean and 3.12, doubling that value will return the percental amount of data present between -3.12 and +3.12. 
 
 The formula for the p-value is :
@@ -59,6 +59,8 @@ where
 zscore=3.12
 
 The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% times two is 99.8..%. So 99.82% of the data is between -3.12 and +3.12. 1 minus 99.82% is 0.18%. So only 0.18% of the data is further away from the mean than our zscore, this zscore represents the difference between our two sample performance rates expressed in a standardized error, only 0.18% of the data is outside our boundary of -3.12 and +3.12. The pvalue is 0.0018, this very small value expresses the impossiblity to produce this zscore of 3.12 without using another distribution with a different mean and sd.
+
+#### Two samples are different
 
 In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other, real samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
 
