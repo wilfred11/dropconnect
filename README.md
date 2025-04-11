@@ -62,7 +62,7 @@ The value for D.cdf(abs(zscore)) is 99.9%. This value minus 50% is 49.9%. 49.9% 
 
 #### Two samples are different
 
-In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other, real samples it would be even more indicative. Using a technique like cross validation it would be possible to give a higher weight to these statistical tests.
+In other words the comparison of the two samples seems to indicate the DropConnect linear layer does a better job when recognizing digits of the MNIST dataset. When being able to get similar results using other, real samples it would be even more indicative. Using a technique like k-fold cross validation on the full dataset (containing 70000 items), it would be possible to give a higher weight to the statistical test described here, this by producing more performance rates.
 
 ### Normal distribution to approximate a binomial distribution
 
