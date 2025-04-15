@@ -1,9 +1,9 @@
-In this project the performance of two digit recognition models are compared statistically. The first model contains 2 linear layers, the second model contains 2 linear layers of which one is a DropConnectLayer (I am a bit doubtful with respect to this layer, but I was mainly trying to do some statistical testing.). A DropConnection layer is a layer that promotes generalization by randomly setting weights to zero when backpropagating. 
+In this project the performance of two digit recognition models are compared statistically. The first model contains 2 linear layers, the second model contains 2 linear layers of which one is a DropConnectLayer (I am a bit doubtful with respect to this layer, but I was mainly trying to do some statistical testing). A DropConnection layer is a layer that promotes generalization by randomly setting weights, linked to this layer, to zero when backpropagating. 
 
 The results of the performances for the two models are somewhat similar (97.23% and 97.91% for 10000 individual tests), but the statistical test shows the results should be considered different with a confidence interval of 95% and even 99%. 
 
 ### Testing whether two models differ in terms of performance
-The test statistic is calculated using the following formula, this formula assumes both permormance rates are in the same distribution. It uses a $\hat{p}$ that is a weighted mean p for both of the distributions to calculate a common mean standard error. The zscore is an expression of how many standard errors the performance rate difference amounts for. 
+The test statistic is calculated using the following formula, this formula assumes both permormance rates are in the same distribution. It uses a $\hat{p}$ (chance of success) that is a weighted mean p for both of the chances of success to calculate a common mean squared standard error. The zscore is an expression of how many standard errors the performance rate difference amounts for. 
 
 $zscore = \frac{p1-p2}{\sqrt{\hat{p}(1-\hat{p})\times(\frac{1}{n1}+\frac{1}{n2})}}$
 
