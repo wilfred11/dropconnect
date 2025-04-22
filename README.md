@@ -104,3 +104,10 @@ To generate the number of samples that contains a specific number of successful 
 
 ![bin_test](https://github.com/user-attachments/assets/448c57c5-6de1-4a53-a6db-0b05f98ef134)
 
+### Power
+
+The power of proportional z-test is shown in 
+
+![power](https://github.com/user-attachments/assets/6da4a6c5-feff-4c53-850e-330d1ec84998)
+
+
