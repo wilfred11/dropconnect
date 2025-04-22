@@ -110,10 +110,13 @@ The power of proportional z-test is shown in the image below. It is shows the ch
 
 zalpha is calculated using following code
 `Dnull=norm()`
+
 `zalpha=Dnull.ppf(0.975)`
 
  `Dalt= norm(-3.12,1)`
+ 
  `powerl=Dalt.cdf(-z_alpha)`
+ 
  `powerr= 1- Dalt.cdf(z_alpha)`
  
 
