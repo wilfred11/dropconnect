@@ -113,15 +113,22 @@ zalpha is calculated using following code
 
 `zalpha=Dnull.ppf(0.975)`
 
+The respective powers (left, right) are calculated using the alternative distribution.
+
  `Dalt= norm(-3.12,1)`
  
  `powerl=Dalt.cdf(-z_alpha)`
  
  `powerr= 1- Dalt.cdf(z_alpha)`
  
+powerl represents the part left of the negative critical value.
+powerr represents the part right of the positive critical value.
 
+The total power is 0.88 this is a good value. As power is a value between 0 and 1. In this case the power is made up almost completely of chances right of the negative critical values. 
 
+The value could also have been calculated using statsmodels function 
 
+`statsmodels_power= power_proportions_2indep( 0.0068, 0.9723, 10000, ratio=1, alpha=0.05, value=0, alternative='two-sided', return_results=False)`
 
 ![power](https://github.com/user-attachments/assets/6da4a6c5-feff-4c53-850e-330d1ec84998)
 
