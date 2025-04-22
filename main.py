@@ -1,4 +1,6 @@
 import math
+
+import scipy
 import torch
 from matplotlib import pyplot as plt
 from scipy.stats import norm
@@ -9,10 +11,15 @@ from tqdm import tqdm
 import torchvision.transforms as transforms
 import stat_test
 from model import check_accuracy, NN, NN_dropconnect
+from statsmodels.stats.proportion import power_proportions_2indep
+from statsmodels.stats.power import  zt_ind_solve_power
 
 import pickle
 
-do = 11
+from sm_ztest import sm_ztest
+from statsmodels.stats.power import zt_ind_solve_power
+
+do = 14
 
 input_size = 784  # 28x28 pixels
 num_classes = 10  # digits 0-9
@@ -91,6 +98,38 @@ if do == 12:
     print("cv: "+str(cv))
     print(D.cdf(3.12)-0.5)
     print(1-(2*(D.cdf(3.12)-0.5)))
+
+if do == 13:
+    D = norm()
+
+if do == 14:
+    stat,pval=sm_ztest()
+    D=norm()
+    z_alpha1=D.ppf(0.975)
+    print(z_alpha1)
+    D_alt= norm(stat,1)
+    power_l=D_alt.cdf(-z_alpha1)
+    power_r= 1- D_alt.cdf(z_alpha1)
+    print(power_l)
+    print(power_r)
+    power =power_l +power_r
+    print("power own_calc: "+ str(power))
+
+    statmodels_power= power_proportions_2indep( 0.0068, 0.9723, 10000, ratio=1, alpha=0.05, value=0, alternative='two-sided', return_results=False)
+    print("statmodels_power: "+str(statmodels_power))
+    #print("p"+ str(p))
+
+
+
+
+
+
+
+    #anal = zt_ind_solve_power(effect_size=stat, power=.80, alpha=0.05,  ratio=1)
+    #print(anal)
+
+
+
 
 
 

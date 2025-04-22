@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 from scipy.stats import norm
 from statistics import  NormalDist
 
+
 def p_hat(n1,n2,p1,p2):
     p_hat = ((n1 * p1) + (p2 * n1)) / (n1 + n1)
     return p_hat
