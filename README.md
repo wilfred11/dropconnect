@@ -137,7 +137,7 @@ The total power is 0.88 this is a good value. As power is a value between 0 and 
 
 The value could also have been calculated using statsmodels function 
 
-`statsmodels_power= power_proportions_2indep( 0.0068, 0.9723, 10000, ratio=1, alpha=0.05, value=0, alternative='two-sided', return_results=False)`
+`statsmodels_power= statsmodels.stats.proportion.power_proportions_2indep( 0.0068, 0.9723, 10000, ratio=1, alpha=0.05, value=0, alternative='two-sided', return_results=False)`
 
 ![power_n](https://github.com/user-attachments/assets/91fc06df-ab5b-44f6-a789-64d98dbfbcbc)
 
