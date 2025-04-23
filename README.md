@@ -112,7 +112,7 @@ There is a function to get the p-value and zscore for our proportions and perfor
 
 The zscore using this function is -3.12.
 
-The power of proportional z-test is shown in the image below. It is shows the chance to correctly reject the null hypothesis. This chance is given by the part of the H_alternative normal graph (mean=z-score, std=1) that is left of the negative critical value and the part of the H_alternative normal graph that is right of the positive critical value. This chance is calculated using a cdf function. But first calculate the critical values for 0.975. The 
+The power of proportional z-test is shown in the image below. It shows the chance to correctly reject the null hypothesis. This chance is given by the part of the H_alternative normal graph (mean=z-score, std=1) that is left of the negative critical value and the part of the H_alternative normal graph that is right of the positive critical value. This chance is calculated using a cdf function. But first calculate the critical values for 0.975. The 
 
 zalpha is calculated using following code
 
@@ -122,7 +122,7 @@ zalpha is calculated using following code
 
 zalpha is 1.96, this value is a typical value when using the standard normal distribution.
 
-The respective powers (left, right) are calculated using the alternative distribution.
+The respective powers (left, right) are calculated using the alternative hypothesis distribution.
 
  `Dalt= norm(-3.12,1)`
  
