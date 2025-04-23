@@ -141,6 +141,16 @@ The value could also have been calculated using statsmodels function
 
 ![power_](https://github.com/user-attachments/assets/b5bd7d01-ae60-4f07-bf94-527a218ecbb6)
 
+#### Sample size
+
+To calculate a sample size for a given power and performance rate difference use the following code.
+
+`sample_size = statsmodels.stats.proportion.samplesize_proportions_2indep_onetail(diff=0.0068, prop2=0.9723, power=.80, ratio=1, alpha=0.05, value=0, alternative='two-sided')`
+
+
+
+
+
 
 
 
