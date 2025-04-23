@@ -45,7 +45,7 @@ When using 0.975 in the ppf function of the norm, it returns the critical value 
 As the absolute value of the zscore (3.12) is above the critical value of 1.96, p1 and p2 are considered statistically different with a confidence level of 95%.
 
 #### Get the p-value for a zscore
-The p-value expresses the chance to get a value as extreme as the zscore (3.12). To get this value I can use the cdf function for the norm. D.cdf(3.12) returns a percental amount of data that is present between - $\infty$ and 3.12, when substracting 0.5 from this value I get the amount of data that is present between the mean and 3.12, doubling that value will return the percental amount of data present between -3.12 and +3.12. When deducting this value from 1 the p-value is found.
+The p-value expresses the chance to get a value at least as extreme as the zscore (3.12). To get this value I can use the cdf function for the norm. D.cdf(3.12) returns a percental amount of data that is present between - $\infty$ and 3.12, when substracting 0.5 from this value I get the amount of data that is present between the mean and 3.12, doubling that value will return the percental amount of data present between -3.12 and +3.12. When deducting this value from 1 the p-value is found.
 
 The formula for the p-value is :
 
