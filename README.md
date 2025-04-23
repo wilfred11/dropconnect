@@ -138,6 +138,7 @@ The value could also have been calculated using statsmodels function
 
 `statsmodels_power= power_proportions_2indep( 0.0068, 0.9723, 10000, ratio=1, alpha=0.05, value=0, alternative='two-sided', return_results=False)`
 
-![power](https://github.com/user-attachments/assets/6da4a6c5-feff-4c53-850e-330d1ec84998)
+![power_n](https://github.com/user-attachments/assets/91fc06df-ab5b-44f6-a789-64d98dbfbcbc)
+
 
 
