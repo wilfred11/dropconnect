@@ -147,7 +147,7 @@ To calculate a sample size for a given power and performance rate difference use
 
 `sample_size = statsmodels.stats.proportion.samplesize_proportions_2indep_onetail(diff=0.0068, prop2=0.9723, power=.80, ratio=1, alpha=0.05, value=0, alternative='two-sided')`
 
-In this case the sample size is 8048 to get a statistical power of 0.80 when using a performance rate difference of 0.0068 and a initial performance rate of 0.9723. So at a sample size of 8048 and a performance rate difference of  minimum 0.0068 and an initial performance rate of 0.9723 a staistical power of 0.80 is guaranteed.
+In this case the sample size is 8048 to get a statistical power of 0.80 when using a performance rate difference of 0.0068 and a initial performance rate of 0.9723. So at a sample size of 8048 and a performance rate difference of  minimum 0.0068 and an initial performance rate of 0.9723 a statistical power of 0.80 is guaranteed.
 
 
 
