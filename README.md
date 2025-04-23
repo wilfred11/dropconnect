@@ -132,7 +132,7 @@ The respective powers (left, right) are calculated using the alternative distrib
 powerl represents the part left of the negative critical value.
 powerr represents the part right of the positive critical value.
 
-The total power is 0.88 this is a good value. As power is a value between 0 and 1. In this case the power is made up almost completely of chances right of the negative critical values. 
+The total power is 0.88 this is a good value. As power is a value between 0 and 1. In this case the power is made up almost completely of chances left of the negative critical value. 
 
 The value could also have been calculated using statsmodels function 
 
