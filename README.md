@@ -106,6 +106,10 @@ To generate the number of samples that contains a specific number of successful 
 
 ### Power
 
+There is a function to get the p-value and zscore for our proportions and performance rates.
+
+`zscore, pvalue = statsmodels.api.stats.proportions_ztest(count=[9723,9791]], nobs=[10000,10000])`
+
 The power of proportional z-test is shown in the image below. It is shows the chance to correctly reject the null hypothesis. This chance is given by the part of the H_alternative normal graph (mean=z-score, std=1) that is left of the negative critical value and the part of the H_alternative normal graph that is right of the positive critical value. This chance is calculated using a cdf function. But first calculate the critical values for 0.975. The 
 
 zalpha is calculated using following code
